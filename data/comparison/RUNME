@@ -1,0 +1,22 @@
+# submit all files
+submitAll_Extract.sh # for WGS
+# submitAll_ExtractExome.sh # for WES
+# submitAll_RNA.sh # for RNAseq
+
+# get errors
+./bin/TestError.sh
+
+# get resources
+./bin/TestTimes.sh
+# -> resources.Rscript.R
+
+# get accuracy
+./bin/collectResults.sh
+./bin/eval.sh
+# -> resources.Rscript.R
+
+# get coverage and accuracy correlation
+./bin/collectCoverageStats.sh
+#->result/BamAvCoverageacc.txt
+#->result/BamAvCoverage.stats
+#-->/bin/bamStats.Rscript.R

@@ -1,0 +1,9 @@
+#READ1=fastqtest/Run1_read1.fastq
+#READ2=fastqtest/Run1_read2.fastq
+#ENDING="_read1.fastq"
+
+
+READ1NAME="R1"
+READ2NAME="R2"
+E=".fastq.gz"
+ENDING="_R1.fastq.gz"
