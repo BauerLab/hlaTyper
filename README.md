@@ -17,3 +17,6 @@ Results are then [collected](https://github.com/BauerLab/hlaTyper/blob/master/da
 
 # Other Analysis
 Scripts for the other analyses performed for the paper (e.g. coverage stats, or correlations) can be found in [bin](https://github.com/BauerLab/hlaTyper/blob/master/data/comparison/bin/)
+
+# Citing
+Bauer DC, Zadoorian A, Wilson L, Kahlke T, Melbourne Genomics Health Alliance, and Thorne NP, “Evaluation of computational programs to predict HLA genotypes from genomic sequencing data” *in peparation*
