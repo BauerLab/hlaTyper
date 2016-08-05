@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-#SBATCH --time=10:00:00
+#SBATCH --time=1:00:00
 #SBATCH --mem=16gb
 #SBATCH --job-name=seq2hla
 #SBATCH --nodes=1
@@ -66,6 +66,7 @@ echo "CSIRO TYPING $SECONDS seconds"
 #cat result/1000RExtrChr6/seq2hla/${NAME}*.digitalhaplotype* > $OUT/$NAME.digitalhaplotype
 #cat result/1000RExtrChr6/seq2hla/${NAME}*.expression* > $OUT/$NAME.expression
 cat $TMP/${NAME}-Class*.HLAgenotype4digits > $OUT/$NAME.HLAgenotype4digits
+cat $TMP/${NAME}.ambiguity > $OUT/$NAME.ambiguity
 
 echo "---cleanup"
 rm -r $TMP

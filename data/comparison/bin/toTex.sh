@@ -20,6 +20,8 @@ PATHL=result/1000RExtrChr6/results1000RExtrChr6
 ADD="iter/runRNA.txt" # limit to samples from RNA dataset
 ./bin/eval.sh $PATHL $ADD > tmpRNA.txt
 
+FULL="1"
+
 echo "Data"
 for i in tmpWGS.txt tmpWES.txt tmpRNA.txt; do
 	TYPE=${i/.txt/}
@@ -75,11 +77,15 @@ for i in tmpWGS.txt tmpWES.txt tmpRNA.txt; do
   PHFAIL=$(sed -n 25,25p $i | gawk '{print $37}')
 
   # seq2hla
-  SE2ISA=$(sed -n 28,28p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
-  SE2IISA=$(sed -n 29,29p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
-  SE4ISA=$(sed -n 28,28p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
-  SE4IISA=$(sed -n 29,29p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
-  SEFAIL=$(sed -n 28,28p $i | gawk '{print $37}')
+  SE2ISA=$(sed -n 29,29p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
+  SE2IISA=$(sed -n 30,30p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
+  SE4ISA=$(sed -n 29,29p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
+  SE4IISA=$(sed -n 30,30p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
+	SE2ISAP=$(sed -n 32,32p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
+  SE2IISAP=$(sed -n 33,33p $i | gawk '{print $12*100"\\% ("$9*100"\\%)"}')
+  SE4ISAP=$(sed -n 32,32p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
+  SE4IISAP=$(sed -n 33,33p $i | gawk '{print $23*100"\\% ("$20*100"\\%)"}')
+  SEFAIL=$(sed -n 29,29p $i | gawk '{print $37}')
 
 	if [ -n "$FULL" ]; then
   echo "optitype & 2 & I & $OP2ISA & &  $OPFAIL \\\\"
@@ -107,10 +113,10 @@ for i in tmpWGS.txt tmpWES.txt tmpRNA.txt; do
   echo "phlat & 4 & I & $PH4ISA & &  $PHFAIL \\\\"
   echo "phlat & 4 & I+II & $PH4IISA & &  $PHFAIL \\\\"
 
-  echo "seq2hla & 2 & I & $SE2ISA & &  $SEFAIL \\\\"
-  echo "seq2hla & 2 & I+II & $SE2IISA & &  $SEFAIL \\\\"
-  echo "seq2hla & 4 & I & $SE4ISA & &  $SEFAIL \\\\"
-  echo "seq2hla & 4 & I+II & $SE4IISA & &  $SEFAIL \\\\"
+  echo "seq2hla & 2 & I & $SE2ISA & $SE2ISAP &  $SEFAIL \\\\"
+  echo "seq2hla & 2 & I+II & $SE2IISA & $SE2IISAP &  $SEFAIL \\\\"
+  echo "seq2hla & 4 & I & $SE4ISA & $SE4ISAP &  $SEFAIL \\\\"
+  echo "seq2hla & 4 & I+II & $SE4IISA & $SE4IISAP &  $SEFAIL \\\\"
 
   echo "-------------------------------- short---------"
 
@@ -129,11 +135,11 @@ for i in tmpWGS.txt tmpWES.txt tmpRNA.txt; do
   echo "phlat & 2  & $PH2IISA & &  $PHFAIL \\\\"
   echo " & 4  & $PH4IISA & &   \\\\"
 
-  echo "seq2hla & 2  & $SE2IISA & &  $SEFAIL \\\\"
-  echo " & 4  & $SE4IISA & &   \\\\"
-  
+  echo "seq2hla & 2  & $SE2IISA & $SE2IISAP &  $SEFAIL \\\\"
+  echo " & 4  & $SE4IISA & $SE4IISAP &   \\\\"
+
   fi
-  
+
   echo "-------------------micro "
    echo "$TYPE & optitype & $OP4IISA & &  $OPFAIL \\\\"
 
@@ -145,7 +151,7 @@ for i in tmpWGS.txt tmpWES.txt tmpRNA.txt; do
 
   echo " & phlat  & $PH4IISA & &  $PHFAIL \\\\"
 
-  echo " & seq2hla &  $SE4IISA & &  $SEFAIL \\\\"
+  echo " & seq2hla &  $SE4IISA &  $SE4IISAP &  $SEFAIL \\\\"
 
 
 done

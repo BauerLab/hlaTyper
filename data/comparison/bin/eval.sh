@@ -113,7 +113,10 @@ tail -n 1 $PATHL.phlat.evalCII.txt
 
 
 echo "seq2hla"
-python bin/evaluatePredictions.py $ADD -i $PATHL.seq2hla.txt     -t seq2hla -g $GS -v -n -l >$PATHL.seq2hla.evalCI.txt
-python bin/evaluatePredictions.py $ADD -i $PATHL.seq2hla.txt     -t seq2hla -g $GS -v -n >$PATHL.seq2hla.evalCII.txt
-tail -n 1 $PATHL.seq2hla.evalCI.txt
-tail -n 1 $PATHL.seq2hla.evalCII.txt
+for i in Top Top3; do
+  echo $i
+python bin/evaluatePredictions.py $ADD -i $PATHL.seq2hla$i.txt     -t seq2hla -g $GS -v -n -l >$PATHL.seq2hla$i.evalCI.txt
+python bin/evaluatePredictions.py $ADD -i $PATHL.seq2hla$i.txt     -t seq2hla -g $GS -v -n >$PATHL.seq2hla$i.evalCII.txt
+tail -n 1 $PATHL.seq2hla$i.evalCI.txt
+tail -n 1 $PATHL.seq2hla$i.evalCII.txt
+done

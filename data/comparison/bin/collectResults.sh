@@ -13,10 +13,10 @@
 #####
 # For WGS
 #####
-#RUN=1000GExtrChr6
-#TYPE="_lc"
-#RESULT=result/$RUN/results$RUN
-#ITER=iter/collectSamples$RUN.txt
+RUN=1000GExtrChr6
+TYPE="_lc"
+RESULT=result/$RUN/results$RUN
+ITER=iter/collectSamples$RUN.txt
 
 #####
 # For WES
@@ -29,10 +29,10 @@
 #####
 # For RNA
 #####
-RUN=1000RExtrChr6
-TYPE=""
-RESULT=result/$RUN/results$RUN
-ITER=iter/runRNA.txt
+#RUN=1000RExtrChr6
+#TYPE=""
+#RESULT=result/$RUN/results$RUN
+#ITER=iter/runRNA.txt
 
 
 #RUN=1000GExtrChr6HC
@@ -66,7 +66,9 @@ for i in $(cat $ITER ); do
      LIST=$LIST" "$TMP/$SAMPLE.seq2hla.$t.tmp
   done
   OUT=$(cat $LIST | paste -d "|" - - - - - -)
-  echo $SAMPLE $OUT >> $RESULT.seq2hla.txt
+  echo $SAMPLE $OUT >> $RESULT.seq2hlaTop.txt
+  FL=$(ls result/$RUN/seq2hla/${SAMPLE}*${TYPE}.HLAgenotype4digits)
+  python bin/parseSeq2hla.py -i ${FL/.HLAgenotype4digits/} -s $SAMPLE -t 3 >> $RESULT.seq2hlaTop3.txt
 
   #phlat A B C DQA1 DQB1 DRB1
   LIST=""

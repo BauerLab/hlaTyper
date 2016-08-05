@@ -3326,29 +3326,29 @@ R4 HG00186.DRB1.2 gold: 08:01:01/08:01:03 seq2hla: 08:01
 SUM HG00186 rightLow 11 wrongLow 1 success = 0.92 accuracy = 0.92 | rightHigh 9 wrongHigh 3 success = 0.75 accracy = 0.75 | na 0 total 12
 R2 HG00185.A.1 gold: 02:01:01:01/02:01:01:02/02:01:01:03/02:01:08/02:01:11/02:01:14/02:01:15/02:01:21/02:09/02:43/02:66/02:75/02:83/02:89/02:97/02:132/02:134/02:140 seq2hla: 02:01
 R4 HG00185.A.1 gold: 02:01:01:01/02:01:01:02/02:01:01:03/02:01:08/02:01:11/02:01:14/02:01:15/02:01:21/02:09/02:43/02:66/02:75/02:83/02:89/02:97/02:132/02:134/02:140 seq2hla: 02:01
-W2 HG00185.A.2 gold: 26:01:01/26:01:07/26:24/26:26 seq2hla: 68:01
-W4 HG00185.A.2 gold: 26:01:01/26:01:07/26:24/26:26 seq2hla: 68:01
-W2 HG00185.C.1 gold: 03:04:01/03:04:03 seq2hla: 04:01
-W4 HG00185.C.1 gold: 03:04:01/03:04:03 seq2hla: 04:01
+R2 HG00185.A.2 gold: 26:01:01/26:01:07/26:24/26:26 seq2hla: 26:01
+R4 HG00185.A.2 gold: 26:01:01/26:01:07/26:24/26:26 seq2hla: 26:01
+R2 HG00185.C.1 gold: 03:04:01/03:04:03 seq2hla: 03:04
+R4 HG00185.C.1 gold: 03:04:01/03:04:03 seq2hla: 03:04
 R2 HG00185.C.2 gold: 05:01:01:01/05:01:01:02/05:01:04/05:01:05/05:03 seq2hla: 05:01
 R4 HG00185.C.2 gold: 05:01:01:01/05:01:01:02/05:01:04/05:01:05/05:03 seq2hla: 05:01
-W2 HG00185.B.1 gold: 40:02:01/40:56/40:97 seq2hla: 35:08
-W4 HG00185.B.1 gold: 40:02:01/40:56/40:97 seq2hla: 35:08
+R2 HG00185.B.1 gold: 40:02:01/40:56/40:97 seq2hla: 40:02
+R4 HG00185.B.1 gold: 40:02:01/40:56/40:97 seq2hla: 40:02
 R2 HG00185.B.2 gold: 44:02:01:01/44:02:01:02/44:19/44:27/44:66 seq2hla: 44:02
 R4 HG00185.B.2 gold: 44:02:01:01/44:02:01:02/44:19/44:27/44:66 seq2hla: 44:02
-W2 HG00185.DQB1.1 gold: 05:01:01 seq2hla: 03:01
-W4 HG00185.DQB1.1 gold: 05:01:01 seq2hla: 03:01
-W2 HG00185.DQB1.2 gold: 06:04:01/06:34 seq2hla: 05:03
-W4 HG00185.DQB1.2 gold: 06:04:01/06:34 seq2hla: 05:03
-W2 HG00185.DQA1.1 gold: 05:01:01 seq2hla: 01:01
-W4 HG00185.DQA1.1 gold: 05:01:01 seq2hla: 01:01
-W2 HG00185.DQA1.2 gold: 06:04:01/06:34 seq2hla: 05:01
-W4 HG00185.DQA1.2 gold: 06:04:01/06:34 seq2hla: 05:01
-W2 HG00185.DRB1.1 gold: 01:01:01 seq2hla: 03:17
-W4 HG00185.DRB1.1 gold: 01:01:01 seq2hla: 03:17
-W2 HG00185.DRB1.2 gold: 13:02:01 seq2hla: 11:01
-W4 HG00185.DRB1.2 gold: 13:02:01 seq2hla: 11:01
-SUM HG00185 rightLow 3 wrongLow 9 success = 0.25 accuracy = 0.25 | rightHigh 3 wrongHigh 9 success = 0.25 accracy = 0.25 | na 0 total 12
+R2 HG00185.DQB1.1 gold: 05:01:01 seq2hla: 05:01
+R4 HG00185.DQB1.1 gold: 05:01:01 seq2hla: 05:01
+R2 HG00185.DQB1.2 gold: 06:04:01/06:34 seq2hla: 06:04
+R4 HG00185.DQB1.2 gold: 06:04:01/06:34 seq2hla: 06:04
+W2 HG00185.DQA1.1 gold: 05:01:01 seq2hla: 01:02
+W4 HG00185.DQA1.1 gold: 05:01:01 seq2hla: 01:02
+W2 HG00185.DQA1.2 gold: 06:04:01/06:34 seq2hla: 01:02
+W4 HG00185.DQA1.2 gold: 06:04:01/06:34 seq2hla: 01:02
+R2 HG00185.DRB1.1 gold: 01:01:01 seq2hla: 01:01
+R4 HG00185.DRB1.1 gold: 01:01:01 seq2hla: 01:01
+R2 HG00185.DRB1.2 gold: 13:02:01 seq2hla: 13:02
+R4 HG00185.DRB1.2 gold: 13:02:01 seq2hla: 13:02
+SUM HG00185 rightLow 10 wrongLow 2 success = 0.83 accuracy = 0.83 | rightHigh 10 wrongHigh 2 success = 0.83 accracy = 0.83 | na 0 total 12
 R2 HG00246.A.1 gold: 03:01:01:01/03:01:01:02/03:01:01:03/03:01:07/03:20/03:21/03:26/03:37/03:45 seq2hla: 03:01
 R4 HG00246.A.1 gold: 03:01:01:01/03:01:01:02/03:01:01:03/03:01:07/03:20/03:21/03:26/03:37/03:45 seq2hla: 03:01
 R2 HG00246.A.2 gold: 11:01:01/11:21 seq2hla: 11:01
@@ -9271,4 +9271,4 @@ W4 NA19102.DRB1.1 gold: 15:03 seq2hla: 13:07
 R2 NA19102.DRB1.2 gold: 15:03 seq2hla: 15:03
 R4 NA19102.DRB1.2 gold: 15:03 seq2hla: 15:03
 SUM NA19102 rightLow 9 wrongLow 3 success = 0.75 accuracy = 0.75 | rightHigh 9 wrongHigh 3 success = 0.75 accracy = 0.75 | na 0 total 12
-Class I+II rightLow 3758 wrongLow 692 success = 0.84 accuracy = 0.84 | rightHigh 3491 wrongHigh 959 success = 0.78 accuracy = 0.78 | na 0 total 4450 NA 0.00 | samples 373 predictions 373 failed 0
+Class I+II rightLow 3765 wrongLow 685 success = 0.85 accuracy = 0.85 | rightHigh 3498 wrongHigh 952 success = 0.79 accuracy = 0.79 | na 0 total 4450 NA 0.00 | samples 373 predictions 373 failed 0

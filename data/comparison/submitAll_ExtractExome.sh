@@ -18,12 +18,15 @@ mkdir -p $OUTDIR
 mkdir -p $QOUT
 
 COUNTER=1
-
-# get the sample IDS to run it on
-ITER=iter/iterateExtract.txt
-
-# Example of how to re-run it on subsets
+ITER=iter/collectSamples1000EExtrChr6.txt
+#ITER=iter/iterateExtract.txt
+#ITER=iter/runE_hlaminerDNAalignment.txt
+#ITER=iter/runE_hlavbseq.txt
+#ITER=iter/runE.txt
+#ITER=iter/runE_optitype.txt
+#ITER=iter/runE_seq2hla.txt
 #ITER=iter/runE_phlat.txt
+#ITER=iter/runE.txt
 
 MAX=$(wc -l $ITER | cut -f 1 -d " ")
 
@@ -62,15 +65,22 @@ for ((c=$COUNTER;c<=$MAX;c++)); do
 
   # run the HLA predictors
   #echo -e "submitting the following \n \n"
-  sbatch $WAIT --time=60:00:00 -J E${NAME}hlaminerDNAassembly -o $QOUT/${NAME}_hlaminerDNAassembly.out bin/Run_hlaminer.sbatch $READ1 $OUTDIR DNA assembly
-  sbatch $WAIT -J E${NAME}hlaminerDNAalignment -o $QOUT/${NAME}_hlaminerDNAalignment.out bin/Run_hlaminer.sbatch $READ1 $OUTDIR DNA alignment
+  #sbatch $WAIT --time=60:00:00 -J E${NAME}hlaminerDNAassembly -o $QOUT/${NAME}_hlaminerDNAassembly.out bin/Run_hlaminer.sbatch $READ1 $OUTDIR DNA assembly
+  #sbatch $WAIT -J E${NAME}hlaminerDNAalignment -o $QOUT/${NAME}_hlaminerDNAalignment.out bin/Run_hlaminer.sbatch $READ1 $OUTDIR DNA alignment
 
-  sbatch $WAIT --time=60:00:00 -J E${NAME}optitypeDNA -o $QOUT/${NAME}_optitypeDNA.out bin/Run_optitype.sbatch $READ1 $OUTDIR DNA
+  #sbatch $WAIT --time=60:00:00 -J E${NAME}optitypeDNA -o $QOUT/${NAME}_optitypeDNA.out bin/Run_optitype.sbatch $READ1 $OUTDIR DNA
 
-  sbatch $WAIT --mem=64gb -J E${NAME}hlavbseq -o $QOUT/${NAME}_hlavbseq.out bin/Run_hlavbseq.sbatch $READ1 $OUTDIR
+  ##sbatch $WAIT -J E${NAME}athlates -o $QOUT/${NAME}_athlates.out bin/Run_athlates.sbatch $READ1 $OUTDIR
 
-  sbatch $WAIT -J E${NAME}phlat -o $QOUT/${NAME}_phlat.out bin/Run_phlat.sbatch $READ1 $OUTDIR
+  #sbatch $WAIT --mem=64gb -J E${NAME}hlavbseq -o $QOUT/${NAME}_hlavbseq.out bin/Run_hlavbseq.sbatch $READ1 $OUTDIR
+  #RECIPT=$(sbatch $WAIT --mem=64gb -J E${NAME}hlavbseq -o $QOUT/${NAME}_hlavbseq.out bin/Run_hlavbseq.sbatch $READ1 $OUTDIR)
+  #JOBID=$(echo "$RECIPT" | awk '{print $4}')
+  #WAIT="-d afterok:${JOBID} --kill-on-invalid-dep=yes"
 
-  sbatch $WAIT -J E${NAME}seq2hla -o $QOUT/${NAME}_seq2hla.out bin/Run_seq2hla.sbatch $READ1 $OUTDIR
+  #sbatch $WAIT -J E${NAME}phlat -o $QOUT/${NAME}_phlat.out bin/Run_phlat.sbatch $READ1 $OUTDIR
+
+  # RNA
+  ##sbatch $WAIT -J ${NAME}hlaforest -o $QOUT/${NAME}_hlaforest.out bin/Run_hlaforest.sbatch $READ1 $OUTDIR
+  sbatch -J E${NAME}seq2hla -o $QOUT/${NAME}_seq2hla.out bin/Run_seq2hla.sbatch $READ1 $OUTDIR
 
 done
